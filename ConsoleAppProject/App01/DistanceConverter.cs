@@ -6,7 +6,7 @@ namespace ConsoleAppProject.App01
     /// Please describe the main features of this App
     /// </summary>
     /// <author>
-    /// Derek version 0.1
+    /// Narinder Kaur version 0.1
     /// </author>
     public class DistanceConverter
     {
@@ -30,15 +30,15 @@ namespace ConsoleAppProject.App01
             OutputFeet();
         }
 
-        private static void OutputHeading()
+        private void OutputHeading()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Blue;
 
             Console.WriteLine();
-            Console.WriteLine(" ========================");
-            Console.WriteLine("    Distance Converter   ");
-            Console.WriteLine("        by Derek         ");
-            Console.WriteLine(" ========================");
+            Console.WriteLine("         ===========================");
+            Console.WriteLine("         App01:  Distance Converter     ");
+            Console.WriteLine("               by Narinder Kaur         ");
+            Console.WriteLine("         ===========================");
             Console.WriteLine();
         }
 
