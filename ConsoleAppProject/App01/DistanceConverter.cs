@@ -6,11 +6,10 @@ namespace ConsoleAppProject.App01
     /// Please describe the main features of this App
     /// </summary>
     /// <author>
-    /// Derek version 0.1
+    /// Narinder Kaur version 0.1
     /// </author>
     public class DistanceConverter
     {
-        public const int FEET_IN_MILES = 5280;
 
         private double miles;
         private double feet;
@@ -29,35 +28,40 @@ namespace ConsoleAppProject.App01
             CalculateFeet();
             OutputFeet();
         }
-
-        private static void OutputHeading()
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-
-            Console.WriteLine();
-            Console.WriteLine(" ========================");
-            Console.WriteLine("    Distance Converter   ");
-            Console.WriteLine("        by Derek         ");
-            Console.WriteLine(" ========================");
-            Console.WriteLine();
-        }
-
         private void OutputFeet()
         {
-            Console.WriteLine("The number of miles = " + feet);
+            Console.WriteLine();
+            Console.WriteLine("  " + miles + "miles is" + feet + "feet");
+            Console.WriteLine();
         }
 
         private void CalculateFeet()
         {
-            feet = miles * FEET_IN_MILES;
+            feet = miles * 5200; 
         }
-
+        
+        /// <summary>
+         /// Output a message to the user to enter the miles
+         /// and then read it in an a string and correct it tp a double 
+         /// </summary>
         private void InputMiles()
         {
-            Console.Write(" Please input the distance in miles > ");
-            
-            number = Console.ReadLine();
-            miles = Convert.ToDouble(number);
+            Console.WriteLine();
+            Console.WriteLine("  Please enter your distance as miles >  ");
+            string value = Console.ReadLine();
+            miles = Convert.ToDouble(value);
+        }
+
+        private void OutputHeading()
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+
+            Console.WriteLine();
+            Console.WriteLine("         ===========================");
+            Console.WriteLine("         App01:  Distance Converter     ");
+            Console.WriteLine("               by Narinder Kaur         ");
+            Console.WriteLine("         ===========================");
+            Console.WriteLine();
         }
     }
 }
