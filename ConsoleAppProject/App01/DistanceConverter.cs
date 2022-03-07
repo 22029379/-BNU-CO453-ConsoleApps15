@@ -26,6 +26,14 @@ namespace ConsoleAppProject.App01
         private DistanceUnits fromUnit;
         private DistanceUnits toUnit;
 
+        public DistanceUnits DistanceUnits
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
         /// <summary>
         /// This method will output a heading, ask for the 
         /// input for miles calculate and output the same
