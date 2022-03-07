@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConsoleAppProject.Helpers;
+using System;
 
 namespace ConsoleAppProject.App01
 {
@@ -10,50 +11,94 @@ namespace ConsoleAppProject.App01
     /// </author>
     public class DistanceConverter
     {
-        private double miles;
+        public const int FEET_IN_MILES = 5280;
+        public const double METRES_IN_MILES = 1609.34;
+        public const double FEET_IN_METRES = 3.28084;
+       
+        public const string MILES = "Miles";
+        public const string FEET = "Feet";
+        public const string METRES = "Metres";
         
-        private double feet;
 
+        private double fromDistance;
+        private double toDistance;
+
+        private DistanceUnits fromUnit;
+        private DistanceUnits toUnit;
+
+        /// <summary>
+        /// This method will output a heading, ask for the 
+        /// input for miles calculate and output the same
+        /// distance in feet. 
+        /// </summary>
+        /// 
         public void Run()
         {
-            OutputHeading();
-            InputMiles();
-            CalculateFeet();
-            OutputFeet();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            ConsoleHelper.OutputHeading("App01 Distance Converter", "Narinder Kaur");
+
+            fromUnit = SelectUnit("Please select your from unit");
+            toUnit = SelectUnit("Please select your to unit");
+
+            Console.WriteLine($" \n You are converting from {fromUnit} to {toUnit} \n");
+
+            fromDistance = ConsoleHelper.InputNumber("please enter the from distance in {feet} >");
+
+            ConvertDistance();
+            OutputDistance();
+
         }
-        private void OutputFeet()
+        private void OutputDistance()
         {
-            Console.WriteLine();
-            Console.WriteLine("  " + miles + "  miles is " + feet + " Feet ");
-            Console.WriteLine(); 
+            Console.WriteLine($" {fromDistance} {fromUnit} = {toDistance} { toUnit}!");
         }
 
-        private void CalculateFeet()
+        private void ConvertDistance()
         {
-            feet = miles * 5280;
+            if (fromUnit == DistanceUnits.Miles &&
+               toUnit == DistanceUnits.Feet)
+            {
+                toDistance = fromDistance * FEET_IN_MILES;
+            }
+            else if (fromUnit == DistanceUnits.Metres &&
+                    toUnit == DistanceUnits.Miles)
+            {
+                toDistance = fromDistance *METRES_IN_MILES;
+            }
         }
-        /// <summary>
-        /// Output a message to the user to enter the miles 
-        /// and then read it in  as a string and convert it tp a double 
-        /// </summary>
-        private void InputMiles()
+
+        private DistanceUnits SelectUnit(string prompt)
         {
-            Console.WriteLine();
-            Console.Write("  Please enter your distance as miles>  ");
+            string[] choices =
+            {
+                $"{DistanceUnits.Miles}",
+                $"{DistanceUnits.Feet}",
+                $"{DistanceUnits.Metres}",
+            };
+            Console.WriteLine($"\n{prompt}\n");
+            int choice = ConsoleHelper.SelectChoice(choices);
+
+            if (choice == 1)
+            {
+                return DistanceUnits.Miles;
+            }
+            else if (choice == 2)
+            {
+                return DistanceUnits.Feet;
+            }
+            else if (choice == 3)
+            {
+                return DistanceUnits.Metres;
+            }
+            else return DistanceUnits.NoUnit;
+        }
+        private double InputDistance(DistanceUnits unit)
+        {
+            Console.Write($"Please input the distance in {unit}>  ");
             string value = Console.ReadLine();
-            miles = Convert.ToDouble(value);
-        }
-
-        private void OutputHeading()
-        {
-            Console.WriteLine();
-            Console.WriteLine("      ===========================    ");
-            Console.WriteLine("       App01:  Distance Converter    ");
-            Console.WriteLine("             by Narinder             ");
-            Console.WriteLine("      ===========================    ");
-            Console.WriteLine();
-        }
+            return Convert.ToDouble(value);
     }
+  }
 }
 
 

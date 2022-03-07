@@ -11,7 +11,7 @@ namespace ConsoleAppProject.Helpers
     /// There are methods for outputting a main heading
     /// and a title.
     /// <author>
-    /// Derek Peacock 2021
+    /// Narinder Kaur 2021
     /// </author>
     /// </summary>
     public static class ConsoleHelper
@@ -119,14 +119,14 @@ namespace ConsoleAppProject.Helpers
         /// inform the use which units are being converted
         /// Please change the authors name.
         /// </summary>
-        public static void OutputHeading(string heading)
+        public static void OutputHeading(string heading, string author)
         {
             Console.ForegroundColor = ConsoleColor.Green;
 
             Console.WriteLine("\n ---------------------------------");
-            Console.WriteLine($"    {heading}          ");
-            Console.WriteLine("     by Derek Peacock           ");
-            Console.WriteLine(" ---------------------------------" +
+            Console.WriteLine($"        {heading}                  ");
+            Console.WriteLine($"       by {author}            ");
+            Console.WriteLine(" ------------------------------"   +
                 "\n");
 
             Console.ForegroundColor = ConsoleColor.Yellow;

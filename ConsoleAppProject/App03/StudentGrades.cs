@@ -11,6 +11,15 @@ namespace ConsoleAppProject.App03
     /// </summary>
     public class StudentGrades
     {
+        
+        private void InputMarks()
+        {
 
+        }
+        private void ConvertTOGrade()
+        {
+
+                                                                                                                             
+        }
     }
 }
