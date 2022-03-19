@@ -151,5 +151,10 @@ namespace ConsoleAppProject.Helpers
             Console.WriteLine("\n");
             Console.ResetColor();
         }
+
+        internal static void OutputHeading(string v)
+        {
+            
+        }
     }
 }

@@ -18,13 +18,17 @@ namespace ConsoleAppProject.App01
         public const string MILES = "Miles";
         public const string FEET = "Feet";
         public const string METRES = "Metres";
-        
+
+        public void Calculate()
+        {
+            throw new NotImplementedException();
+        }
 
         private double fromDistance;
         private double toDistance;
 
-        private DistanceUnits fromUnit;
-        private DistanceUnits toUnit;
+        public DistanceUnits fromUnit;
+        public DistanceUnits toUnit;
 
         public DistanceUnits DistanceUnits
         {
@@ -58,13 +62,13 @@ namespace ConsoleAppProject.App01
             OutputDistance();
 
         }
-        private void OutputDistance()
+        public void OutputDistance()
         {
 
             Console.WriteLine($" {fromDistance} {fromUnit} = {toDistance} { toUnit}!");
         }
 
-        private void ConvertDistance()
+        public void ConvertDistance()
         {
             if (fromUnit == DistanceUnits.Miles &&
                toUnit == DistanceUnits.Feet)
@@ -78,7 +82,7 @@ namespace ConsoleAppProject.App01
             }
         }
 
-        private DistanceUnits SelectUnit(string prompt)
+        public DistanceUnits SelectUnit(string prompt)
         {
             string[] choices =
             {

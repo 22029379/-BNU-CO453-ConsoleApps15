@@ -11,7 +11,7 @@ namespace ConsoleAppProject
     /// to start App01 to App05 for CO453 CW1
     /// 
     /// This Project has been modified by:
-    /// Narinder aur 01/02/2022
+    /// Narinder kaur 01/02/2022
     /// </summary>
     public static class Program
     {
@@ -34,9 +34,34 @@ namespace ConsoleAppProject
                 Console.WriteLine("                       by Narinder Kaur                ");
                 Console.WriteLine("      =================================================");
                 Console.WriteLine();
-                DistanceConverter app01 = new DistanceConverter();
-                app01.Run();
-                Console.ForegroundColor = ConsoleColor.White;
+
+                string[] choices =
+                {
+                    "App01 Distance Converter",
+                    "App02 BMI Calculator",
+                    "App03 Students Grades"
+                };
+
+                Console.WriteLine("Please Choose your App\n");
+
+                int choice = ConsoleHelper.SelectChoice(choices);
+
+                switch (choice)
+                {
+                    case 1:
+                        DistanceConverter app01 = new DistanceConverter();
+                        app01.Run();
+                        break;
+
+                    case 2: break;
+
+                    case 3:
+                        StudentGrades app03 = new StudentGrades();
+                        app03.Run();
+                        break;
+                
+                        
+                }
             }
         }
     }
