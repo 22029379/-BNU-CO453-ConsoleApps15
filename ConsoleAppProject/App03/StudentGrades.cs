@@ -42,7 +42,15 @@ namespace ConsoleAppProject.App03
 
         public int Total { get; set; }
 
-       
+        public Grades Grades
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+
 
         /// <summary>
         /// In this method run the programme with 10 student and their Marks.
