@@ -81,7 +81,7 @@ namespace ConsoleAppProject.App03
             OutputStatistics();
             OutputGradesProfile();
 
-            Program.Run();
+            
         }
 
         private void OutputGrades()

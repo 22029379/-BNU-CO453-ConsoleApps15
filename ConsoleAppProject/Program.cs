@@ -78,9 +78,5 @@ namespace ConsoleAppProject
             }
         }
 
-        internal static void Run()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
