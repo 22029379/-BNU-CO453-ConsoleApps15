@@ -11,7 +11,14 @@ namespace Grades_unit_test
         {
             //Arrage the things
 
-            StudentGrades app03 = new StudentGrades(); 
+            StudentGrades app03 = new StudentGrades();
+            //Act
+
+            Grades actualGrades = app03.ConvertToGrades(39);
+
+            //
+
+            Assert.AreEqual(actualGrades, Grades.F);
         }
     }
 }

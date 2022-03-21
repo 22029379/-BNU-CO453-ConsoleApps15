@@ -1,4 +1,5 @@
 ﻿using ConsoleAppProject.App01;
+using ConsoleAppProject.App02;
 using ConsoleAppProject.App03;
 using ConsoleAppProject.Helpers;
 using System;
@@ -35,6 +36,15 @@ namespace ConsoleAppProject
                 Console.WriteLine("      =================================================");
                 Console.WriteLine();
 
+                //Distance Converter = new distance converter();
+                //Converter.ConvertDistance();
+
+                //BMI calculate = new BMI();
+                //Calculator.Run();
+
+                //StudentGrades grades = new StudentGrades();
+                //grades.Run();
+               
                 string[] choices =
                 {
                     "App01 Distance Converter",
@@ -53,7 +63,10 @@ namespace ConsoleAppProject
                         app01.Run();
                         break;
 
-                    case 2: break;
+                    case 2:
+                         BMI calculator= new BMI();
+                         calculator.Run();
+                        break;
 
                     case 3:
                         StudentGrades app03 = new StudentGrades();
@@ -63,6 +76,11 @@ namespace ConsoleAppProject
                         
                 }
             }
+        }
+
+        internal static void Run()
+        {
+            throw new NotImplementedException();
         }
     }
 }
