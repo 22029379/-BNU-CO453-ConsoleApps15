@@ -20,16 +20,21 @@ namespace ConsoleAppProject.App04
         public void Run()
         {
             Console.WriteLine("App04 My News");
-            Console.ForegroundColor = ConsoleColor.White;
-            int choice = ConsoleHelper.SelectChoice(choices);
-
-            switch (choice)
+            bool quit = false;
+            while (quit == false)
             {
-                case 1: AddMessage();break;
-                case 2: AddPhotos();break;
-                case 3: PrintPost();break;
-                case 4: break; //quit 
+                int choice = ConsoleHelper.SelectChoice(choices);
+                Console.ForegroundColor = ConsoleColor.White;
+                switch (choice)
+                {
+                    case 1: AddMessage(); break;
+                    case 2: AddPhotos(); break;
+                    case 3: PrintPost(); break;
+                    case 4: quit = true; break; //quit 
+                }
             }
+            
+            
         }
 
         private void PrintPost()

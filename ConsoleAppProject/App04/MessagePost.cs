@@ -35,24 +35,16 @@ namespace ConsoleAppProject.App04
         {
             Message = text;
         }
-
-
-
-
-
-
-
-
-
-        ///<summary>
+         ///<summary>
         /// Display the details of this post.
         /// 
         /// (Currently: Print to the text terminal. This is simulating display 
         /// in a web browser for now.)
         ///</summary>
-        public void Display()
+        public override void Display()
         {
-
+            Console.WriteLine($"Message: {Message}");
+            base.Display();
         }
 
 
