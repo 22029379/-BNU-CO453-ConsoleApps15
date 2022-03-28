@@ -36,7 +36,7 @@ namespace ConsoleAppProject.App04
         /// 
         /// @param text  The text post to be added.
         ///</summary>
-        public void AddFeedsPost(Post post)
+        public void AddPost(Post post)
         {
             Feeds.Add(post);
         }
@@ -54,6 +54,7 @@ namespace ConsoleAppProject.App04
                 post.Display();
                 Console.WriteLine();   // empty line between posts
             }
+
 
         }
     }

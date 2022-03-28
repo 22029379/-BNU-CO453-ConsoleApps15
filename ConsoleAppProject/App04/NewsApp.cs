@@ -34,7 +34,8 @@ namespace ConsoleAppProject.App04
 
         private void PrintPost()
         {
-            throw new NotImplementedException();
+            NewsFeed.Display();
+
         }
 
         private void AddPhotos()
@@ -44,7 +45,22 @@ namespace ConsoleAppProject.App04
 
         private void AddMessage()
         {
-            throw new NotImplementedException();
+
+            string name = EnterAuthor();
+
+            Console.WriteLine(" Please enter your Message >");
+            string message = Console.ReadLine();
+
+            MessagePost post = new MessagePost(name, message);
+            NewsFeed.AddPost(post);
+        }
+
+        private string EnterAuthor()
+        {
+            Console.Write("Please enter your name");
+            string name = Console .ReadLine();  
+            return name;
         }
     }
+    
 }
