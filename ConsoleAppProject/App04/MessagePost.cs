@@ -21,8 +21,7 @@ namespace ConsoleAppProject.App04
         // an arbitrarily long, multi-line message
         public String Message { get; }
 
-        // DateTime time stamp
-        public DateTime Timestamp { get; }
+       
 
         /// <summary>
         /// Constructor for objects of class MessagePost.

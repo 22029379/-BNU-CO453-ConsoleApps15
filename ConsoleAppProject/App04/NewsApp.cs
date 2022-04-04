@@ -13,7 +13,12 @@ namespace ConsoleAppProject.App04
         {
             "Add a Message Post",
             "Add a Photo Post",
+            "Print a post",
             "Display All Post",
+            "Remove a Post",
+            "Add Comment to Post",
+            "Like a Post",
+            "Unlike a Post",
             "Quit"
         };
 
@@ -106,7 +111,7 @@ namespace ConsoleAppProject.App04
             string Caption = Console.ReadLine();
 
             PhotoPost photopost = new PhotoPost(name, Filename, Caption);
-            NewsFeed.AddPost(photopost);
+            NewsFeed.AddPhotoPost(photopost);
         }
 
         private void AddMessage()
@@ -118,7 +123,7 @@ namespace ConsoleAppProject.App04
             string message = Console.ReadLine();
 
             MessagePost post = new MessagePost(name, message);
-            NewsFeed.AddPost(post);
+            NewsFeed.AddMessagePost(post);
         }
 
         private string EnterAuthor()

@@ -21,41 +21,92 @@ namespace ConsoleAppProject.App04
     ///</author> 
     public class NewsFeed
     {
-        
 
-        public List<Post> PostList { get; set; }
+
        
+        private readonly List<Post> posts;
+        private Post photo;
+
+        public List<Post> Posts { get; set; }
+
 
         ///<summary>
         /// Construct an empty news feed.
         ///</summary>
         public NewsFeed()
         {
-            PostList = new List<Post>();
-            
+            Posts = new List<Post>();
+
         }
 
 
         ///<summary>
-        /// Add a text post to the news feed.
+        /// Add a text photo to the news feed.
         /// 
-        /// The text post to be added.
+        /// The text photo to be added.
         ///</summary>
-        public void AddPost(Post post)
+        public void AddPhotoPost(PhotoPost post)
         {
-            PostList.Add(post);
-            
+            posts.Add(photo);
+
+        }
+        public void AddMessagePost(MessagePost message)
+        {
+            posts.Add(message);
+        }
+        public void RemovePost(int id)
+        {
+            Post post = FindPost(id);
+            if (post == null)
+            {
+                Console.WriteLine($"\n post with ID: {id}does not exit");
+            }
+            else
+            {
+                Console.WriteLine($"\n The following Post {id} has been removed");
+                posts.Remove(post);
+            }
         }
 
-        
         ///<summary>
         /// Show the news feed. Currently: print the news feed details to the
         /// terminal. (To do: replace this later with display in web browser.)
         ///</summary>
+
+        private Post FindPost(int id)
+        {
+            foreach (Post post in posts)
+            {
+                if (post.PostID == id)
+                {
+                    return post;
+                }
+            }
+            return null;
+        }
+
+        public void UnlikePost(int id)
+        {
+            Post post = FindPost(id);
+            post.Unlike();
+        }
+
+        public void LikePost(int id)
+        {
+            Post post = FindPost(id);
+            post.Like();
+        }
+
+        public void AddCommentToPost(int id, string comment)
+        {
+            Post post = FindPost(id);
+            post.AddComment(comment);
+        }
+
         public void Display()
         {
             // display all text posts
-            foreach (Post post in PostList)
+            foreach (Post post in Posts)
             {
                 post.Display();
                 Console.WriteLine();   // empty line between posts
@@ -64,25 +115,9 @@ namespace ConsoleAppProject.App04
 
         }
 
-        internal void UnlikePost(int id)
-        {
-            throw new NotImplementedException();
-        }
+       
 
-        internal void LikePost(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void AddCommentToPost(int id, string comment)
-        {
-            throw new NotImplementedException();
-        }
-
-        internal void RemovePost(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 
 }
