@@ -7,7 +7,7 @@ namespace ConsoleAppProject.App04
 {
     public class NewsApp
     {
-        public NewsFeed NewsFeed { get ; set; } = new NewsFeed();
+        public NewsFeed NewsFeed { get; set; } = new NewsFeed();
 
         string[] choices =
         {
@@ -16,10 +16,17 @@ namespace ConsoleAppProject.App04
             "Display All Post",
             "Quit"
         };
-    
+
         public void Run()
         {
-            Console.WriteLine("App04 My News");
+
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("_______________________________________");
+                Console.WriteLine("             App04   My News           ");
+                Console.WriteLine("             by Narinder Kaur          ");
+                Console.WriteLine("_______________________________________");
+            }
             bool quit = false;
             while (quit == false)
             {
@@ -30,11 +37,12 @@ namespace ConsoleAppProject.App04
                     case 1: AddMessage(); break;
                     case 2: AddPhotos(); break;
                     case 3: PrintPost(); break;
-                    case 4: quit = true; break; //quit 
+                    case 4: quit = true; break; 
+                        //quit 
                 }
             }
-            
-            
+
+
         }
 
         private void PrintPost()
@@ -63,9 +71,11 @@ namespace ConsoleAppProject.App04
         private string EnterAuthor()
         {
             Console.Write("Please enter your name");
-            string name = Console .ReadLine();  
+            string name = Console.ReadLine();
             return name;
         }
+        
+        
     }
-    
+
 }

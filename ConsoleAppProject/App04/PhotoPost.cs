@@ -10,7 +10,8 @@ namespace ConsoleAppProject.App04
     /// Other data, such as author and time, are also stored.
     ///</summary>
     /// <author>
-    /// Michael Kölling and David J. Barnes
+    /// Narinder Kaur 
+    /// Date 3 April 2022
     /// @version 0.1
     /// </author>
     public class PhotoPost : Post

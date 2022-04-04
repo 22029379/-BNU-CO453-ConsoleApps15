@@ -15,30 +15,37 @@ namespace ConsoleAppProject.App04
     /// search or ordering functions.
     ///</summary>
     ///<author>
-    ///  Michael Kölling and David J. Barnes
+    ///  Narinder Kaur 
+    ///  3 April 2022
     ///  version 0.1
     ///</author> 
     public class NewsFeed
     {
-       public List<Post> Feeds { get; set; }
+        private MessagePost Messagepost;
+        private PhotoPost Photopost;
+
+        public List<MessagePost> Feeds { get; set; }
+        public List<PhotoPost> Photos { get; set; }
 
         ///<summary>
         /// Construct an empty news feed.
         ///</summary>
         public NewsFeed()
         {
-            Feeds = new List<Post>(); 
+            Feeds = new List<MessagePost>();
+            Photos = new List<PhotoPost>(); 
         }
 
 
         ///<summary>
         /// Add a text post to the news feed.
         /// 
-        /// @param text  The text post to be added.
+        /// The text post to be added.
         ///</summary>
         public void AddPost(Post post)
         {
-            Feeds.Add(post);
+            Feeds.Add(Messagepost);
+            Photos.Add(Photopost);
         }
 
         

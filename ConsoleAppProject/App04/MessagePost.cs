@@ -9,7 +9,8 @@ namespace ConsoleAppProject.App04
     /// text message. Other data, such as author and time, are also stored.
     /// </summary>
     /// <author>
-    /// Michael Kölling and David J. Barnes
+    /// Narinder Kaur
+    /// Date 3 April 2022
     /// version 0.1
     /// </author>
     public class MessagePost : Post
@@ -20,7 +21,8 @@ namespace ConsoleAppProject.App04
         // an arbitrarily long, multi-line message
         public String Message { get; }
 
-
+        // DateTime time stamp
+        public DateTime Timestamp { get; }
 
         /// <summary>
         /// Constructor for objects of class MessagePost.
@@ -35,7 +37,7 @@ namespace ConsoleAppProject.App04
         {
             Message = text;
         }
-         ///<summary>
+        ///<summary>
         /// Display the details of this post.
         /// 
         /// (Currently: Print to the text terminal. This is simulating display 
