@@ -37,12 +37,55 @@ namespace ConsoleAppProject.App04
                     case 1: AddMessage(); break;
                     case 2: AddPhotos(); break;
                     case 3: PrintPost(); break;
-                    case 4: quit = true; break; 
+                    case 4: DisplayAll();break;
+                    case 5: RemovePost(); break;
+                    case 6: AddcommentToPost(); break;
+                    case 7: LikePost(); break;
+                    case 8: UnlikePost(); break;
+                    case 9: quit = true; break; 
                         //quit 
                 }
             }
 
 
+        }
+
+        private void UnlikePost()
+        {
+            int id = (int)ConsoleHelper.InputNumber("Please enter the Post ID: ");
+
+            NewsFeed.UnlikePost(id);
+        }
+
+        private void LikePost()
+        {
+            int id = (int)ConsoleHelper.InputNumber("Please enter the post ID: ");
+
+            NewsFeed.LikePost(id);
+        }
+
+        private void AddcommentToPost()
+        {
+            int id = (int)ConsoleHelper.InputNumber("Please enter the post ID: ");
+
+            Console.WriteLine("Please enter a comment: ");
+            string comment = Console.ReadLine();
+
+            NewsFeed.AddCommentToPost(id, comment);
+        }
+
+        private void RemovePost()
+        {
+            ConsoleHelper.OutputTitle($"Removing a post");
+
+            int id = (int)ConsoleHelper.InputNumber("Please enter the Post ID: ");
+
+            NewsFeed.RemovePost(id);
+        }
+
+        private void DisplayAll()
+        {
+            NewsFeed.Display();
         }
 
         private void PrintPost()
@@ -53,7 +96,17 @@ namespace ConsoleAppProject.App04
 
         private void AddPhotos()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("Enter your Name: ");
+            string name = Console.ReadLine();
+
+            Console.WriteLine("\nEnter the photo Filename: ");
+            string Filename = Console.ReadLine();
+
+            Console.WriteLine("\nEnter the Photo Caption: ");
+            string Caption = Console.ReadLine();
+
+            PhotoPost photopost = new PhotoPost(name, Filename, Caption);
+            NewsFeed.AddPost(photopost);
         }
 
         private void AddMessage()

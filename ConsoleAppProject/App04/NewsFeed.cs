@@ -21,19 +21,18 @@ namespace ConsoleAppProject.App04
     ///</author> 
     public class NewsFeed
     {
-        private MessagePost Messagepost;
-        private PhotoPost Photopost;
+        
 
-        public List<MessagePost> Feeds { get; set; }
-        public List<PhotoPost> Photos { get; set; }
+        public List<Post> PostList { get; set; }
+       
 
         ///<summary>
         /// Construct an empty news feed.
         ///</summary>
         public NewsFeed()
         {
-            Feeds = new List<MessagePost>();
-            Photos = new List<PhotoPost>(); 
+            PostList = new List<Post>();
+            
         }
 
 
@@ -44,8 +43,8 @@ namespace ConsoleAppProject.App04
         ///</summary>
         public void AddPost(Post post)
         {
-            Feeds.Add(Messagepost);
-            Photos.Add(Photopost);
+            PostList.Add(post);
+            
         }
 
         
@@ -56,13 +55,33 @@ namespace ConsoleAppProject.App04
         public void Display()
         {
             // display all text posts
-            foreach (Post post in Feeds)
+            foreach (Post post in PostList)
             {
                 post.Display();
                 Console.WriteLine();   // empty line between posts
             }
 
 
+        }
+
+        internal void UnlikePost(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void LikePost(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddCommentToPost(int id, string comment)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void RemovePost(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 
